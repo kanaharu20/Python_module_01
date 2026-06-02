@@ -11,48 +11,36 @@ class Plant:
             self._cnt_show:int = 0
             self._cnt_grow:int = 0
             self._cnt_age:int = 0
-
         def incl_grow(self) -> None:
             self._cnt_grow += 1
-
         def incl_age(self) -> None:
             self._cnt_age += 1
-
         def incl_show(self) -> None:
             self._cnt_show += 1
-
         def show(self) -> None:
             print(f"Stats: {self._cnt_grow} grow, "
                   f"{self._cnt_age} age, "
                   f"{self._cnt_show} show")
-
     def age(self) -> None:
         self._ages += 1
         self._data.incl_age()
-    
-
     def grow(self) -> None:
         self._height += 8.0
         self._data.incl_grow()
-
     def show(self) -> None:
         print(f"{self._name}: {round(self._height, 1)}cm, {self._ages} days old")
         self._data.incl_show()
-
     def get_name(self) -> str:
         return self._name
-
     @classmethod
     def anonymous(cls) -> "Plant":
         return cls("Unknown_plant", 0.0, 0)
-
     @staticmethod
     def check_year(age:int):
         if age > 365:
             print(f"Is {age} days more than a year? -> True")
         else:
             print(f"Is {age} days more than a year? -> False")
-
 
 class Flower(Plant):
     def __init__(self, _name:str, _height:float, _age:int,
@@ -92,7 +80,6 @@ class Seed(Flower):
         print(f" Seeds: {self._num_seeds}")
         self._data.incl_show()
 
-
 class Tree(Plant):
     class Tree_Data(Plant.Data):
         def __init__(self) -> None:
@@ -122,11 +109,9 @@ class Tree(Plant):
         print("Tree Oak now produces a shade of 200.0cm long and 5.0cm wide.")
         self._data.incl_shade()
 
-
 def show_statistics(plant:Plant) -> None:
     print(f"[statistics for {plant.get_name()}]")
     plant._data.show()
-
 
 def ft_garden_analytics():
     print("=== Garden statistics ===")
@@ -165,7 +150,6 @@ def ft_garden_analytics():
     Unknown_plant = Plant.anonymous()
     Unknown_plant.show()
     show_statistics(Unknown_plant)
-
 
 if __name__ == "__main__":
     ft_garden_analytics()
