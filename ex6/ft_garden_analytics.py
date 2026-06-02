@@ -43,9 +43,9 @@ class Plant:
             print(f"Is {age} days more than a year? -> False")
 
 class Flower(Plant):
-    def __init__(self, _name:str, _height:float, _age:int,
+    def __init__(self, _name:str, _height:float, _ages:int,
                  _color:str, _status:bool):
-        super().__init__(_name, _height, _age)
+        super().__init__(_name, _height, _ages)
         self._color = _color
         self._status = _status
 
