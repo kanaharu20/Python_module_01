@@ -1,16 +1,16 @@
 #!/usr/bin/env python3
 
 class Plant:
-    def __init__ (self,name:str,height:float,age:int) -> None:
-        self.name = name
-        self.height = height
-        self.age = age
+    def __init__ (self,_name:str,_height:float,_ages:int) -> None:
+        self.name = _name
+        self.height = _height
+        self.ages = _ages
     def show(self) -> None:
-        print(f"{self.name}: {round(self.height,1)}cm, {self.age} days old")
+        print(f"{self.name}: {round(self.height,1)}cm, {self.ages} days old")
     def grow(self) -> None:
-        plant.height += 0.4
+        self._height += 0.4
     def age(self) -> None:
-        plant.age += 1
+        self._ages += 1
 Rose = Plant("Rose",25.0,30)
 Oak = Plant("Oak",200.0,365)
 Cactus = Plant("Cactus",5.0,90)
