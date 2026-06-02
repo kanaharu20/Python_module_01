@@ -1,13 +1,13 @@
 #! /usr/bin/env python3
 
 class Plant:
-    def __init__(self, _name: str, _height: float, _ages: int) -> None:
-        self._name = _name
-        self._height = _height
-        self._ages = _ages
+    def __init__(self, name: str, height: float, ages: int) -> None:
+        self._name = name
+        self._height = height
+        self._ages = ages
 
     def show(self) -> None:
-        print(f"{self._name}: {round(self._height,1)}cm, ", end="")
+        print(f"{self._name}: {self._height:.1f}cm, ", end="")
         print(f"{self._ages} days old")
 
     def get_height(self) -> float:
@@ -21,21 +21,19 @@ class Plant:
             print(f"{self._name}: Error, height can't be negative")
             print("Height update rejected")
             return
-        else:
-            self._height = height
-            print(f"Height updated: {self.get_height()}cm")
+        self._height = height
+        print(f"Height updated: {self.get_height()}cm")
 
     def set_age(self, ages: int) -> None:
         if ages < 0:
             print(f"{self._name}: Error, age can't be negative")
             print("Age update rejected")
             return
-        else:
-            self._ages = ages
-            print(f"Age updated: {self.get_age()} days")
+        self._ages = ages
+        print(f"Age updated: {self.get_age()} days")
 
 
-def ft_garden_security():
+def ft_garden_security() -> None:
     print("=== Garden Security System ===")
     Rose = Plant("Rose", 15.0, 10)
     print("Plant created: ", end="")

@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
 
 class Plant:
-    def __init__(self, _name: str, _height: float, _ages: int) -> None:
-        self.name = _name
-        self.height = _height
-        self.ages = _ages
+    def __init__(self, name: str, height: float, ages: int) -> None:
+        self._name = name
+        self._height = height
+        self._ages = ages
 
     def show(self) -> None:
-        print(f"{self.name}: {round(self.height,1)}cm, {self.ages} days old")
+        print(f"{self._name}: {round(self._height,1)}cm, {self._ages} days old")
 
 
 def ft_garden_data() -> None:
@@ -15,9 +15,9 @@ def ft_garden_data() -> None:
     Rose = Plant("Rose", 25, 30)
     Sunflower = Plant("Sunflower", 80, 45)
     Cactus = Plant("Cactus", 15, 120)
-    Plant.show(Rose)
-    Plant.show(Sunflower)
-    Plant.show(Cactus)
+    Rose.show()
+    Sunflower.show()
+    Cactus.show()
 
 
 if __name__ == "__main__":

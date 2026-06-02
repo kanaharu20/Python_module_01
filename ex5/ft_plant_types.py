@@ -102,7 +102,7 @@ def ft_plant_types() -> None:
     print("=== Garden Plant Types ===")
 
     print("=== Flower")
-    Rose = Flower("Rose", 15.0, 10, "red", "False")
+    Rose = Flower("Rose", 15.0, 10, "red", False)
     Rose.show()
     Rose.bloom()
     Rose.show()
