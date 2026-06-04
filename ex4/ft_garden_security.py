@@ -11,7 +11,7 @@ class Plant:
         print(f"{self._ages} days old")
 
     def get_height(self) -> float:
-        return (round(self._height, 1))
+        return round(self._height, 1)
 
     def get_age(self) -> int:
         return (self._ages)
@@ -38,13 +38,13 @@ def ft_garden_security() -> None:
     Rose = Plant("Rose", 15.0, 10)
     print("Plant created: ", end="")
     Rose.show()
-    print("")
+    print()
     Rose.set_height(25)
     Rose.set_age(30)
-    print("")
+    print()
     Rose.set_height(-1)
     Rose.set_age(-1)
-    print("")
+    print()
     print("Current state: ", end="")
     Rose.show()
 
