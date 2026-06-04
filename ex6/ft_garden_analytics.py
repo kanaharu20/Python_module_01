@@ -165,7 +165,7 @@ def show_statistics(plant: Plant) -> None:
     plant._data.show()
 
 
-def ft_garden_analytics():
+def ft_garden_analytics() -> None:
     print("=== Garden statistics ===")
 
     print("=== Check year-old")
