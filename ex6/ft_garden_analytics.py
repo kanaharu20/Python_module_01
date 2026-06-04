@@ -47,7 +47,7 @@ class Plant:
 
     @classmethod
     def anonymous(cls) -> "Plant":
-        return cls("Unknown_plant", 0.0, 0)
+        return cls("Unknown plant", 0.0, 0)
 
     @staticmethod
     def check_year(age: int) -> None:
@@ -86,7 +86,7 @@ class Flower(Plant):
         self._data.incl_show()
 
     def bloom(self) -> None:
-        print(f"[asking the {self._name} to bloom]")
+        print(f"[asking the {self._name.lower()} to grow and bloom]")
         self._status = True
 
 
@@ -100,8 +100,17 @@ class Seed(Flower):
         status: bool,
         num_seeds: int
     ) -> None:
+        
         super().__init__(name, height, ages, color, status)
         self._num_seeds = num_seeds
+   
+    def grow(self) -> None:
+        self._height += 30.0
+        self._data.incl_grow()
+
+    def age(self) -> None:
+        self._ages += 20
+        self._data.incl_age()
 
     def bloom(self) -> None:
         self._status = True
@@ -155,7 +164,7 @@ class Tree(Plant):
         self._data.incl_show()
 
     def produce_shade(self) -> None:
-        print(f"[asking the {self._name} to produce shade]")
+        print(f"[asking the {self._name.lower()} to produce shade]")
         print(f"Tree {self._name} now produces a shade of {self._height}cm long and {self._trunk_diameter}cm wide.")
         self._data.incl_shade()
 
@@ -191,7 +200,7 @@ def ft_garden_analytics() -> None:
     print("\n=== Seed")
     Sunflower = Seed("Sunflower", 80.0, 45, "yellow", False, 0)
     Sunflower.show()
-    print(f"[make {Sunflower.get_name()} grow, age and bloom]")
+    print(f"[make {Sunflower.get_name().lower()} grow, age and bloom]")
     Sunflower.grow()
     Sunflower.age()
     Sunflower.bloom()
