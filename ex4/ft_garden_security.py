@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#!/usr/bin/env python3
 
 class Plant:
     def __init__(self, name: str, height: float, ages: int) -> None:
@@ -14,7 +14,7 @@ class Plant:
         return round(self._height, 1)
 
     def get_age(self) -> int:
-        return (self._ages)
+        return self._ages
 
     def set_height(self, height: float) -> None:
         if height < 0:
