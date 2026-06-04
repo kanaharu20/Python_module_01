@@ -61,7 +61,10 @@ class Tree(Plant):
 
     def produce_shade(self) -> None:
         print(f"[asking the {self._name} to produce shade]")
-        print(f"Tree {self._name} now produces a shade of {self._height}cm long and {self._trunk_diameter}cm wide.")
+        print(
+            f"Tree {self._name} now produces a shade of "
+            f"{self._height}cm long and {self._trunk_diameter}cm wide."
+            )
 
 
 class Vegetable(Plant):

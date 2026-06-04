@@ -100,10 +100,9 @@ class Seed(Flower):
         status: bool,
         num_seeds: int
     ) -> None:
-        
         super().__init__(name, height, ages, color, status)
         self._num_seeds = num_seeds
-   
+
     def grow(self) -> None:
         self._height += 30.0
         self._data.incl_grow()
@@ -155,7 +154,7 @@ class Tree(Plant):
     ) -> None:
         super().__init__(name, height, ages)
         self._trunk_diameter = trunk_diameter
-        self._data = Tree.Tree_Data()
+        self._data: Tree.Tree_Data = Tree.Tree_Data()
 
     def show(self) -> None:
         print(f"{self._name}: {round(self._height,1)}cm, "
@@ -165,7 +164,10 @@ class Tree(Plant):
 
     def produce_shade(self) -> None:
         print(f"[asking the {self._name.lower()} to produce shade]")
-        print(f"Tree {self._name} now produces a shade of {self._height}cm long and {self._trunk_diameter}cm wide.")
+        print(
+            f"Tree {self._name} now produces a shade of "
+            f"{self._height}cm long and {self._trunk_diameter}cm wide."
+            )
         self._data.incl_shade()
 
 

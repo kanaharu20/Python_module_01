@@ -20,7 +20,7 @@ def ft_plant_growth() -> None:
     print("=== Garden Plant Growth ===")
     Rose = Plant("Rose", 25.0, 30)
     Rose.show()
-    for i in range(1,8):
+    for i in range(1, 8):
         print(f"=== Day {i} ===")
         Rose.grow()
         Rose.age()
